@@ -86,6 +86,11 @@ def write_pack(path: str, title: str, intro: str, items: pd.DataFrame, df_all: p
 def build_all(je, df_all, tags, themes, outdir, allowlist):
     os.makedirs(outdir, exist_ok=True)
     masker = Masker(allowlist)
+    from .privacy import build_roles
+
+    norm = lambda x: re.sub(r"\s+", " ", re.sub(r"[^a-z\s-]", " ", re.sub(r"<[^>]*>|\[[^\]]*\]", "", x).lower())).strip()
+    masker.roles = build_roles(je, tags, norm)
+    print(f"roles inferred for {len(masker.roles)} contacts")
     sensitive = tags.get("th_sensitive_abuse", pd.Series(0, index=tags.index)).gt(0)
     words = je.body.str.split().str.len()
     own = je.body.apply(ownness)
