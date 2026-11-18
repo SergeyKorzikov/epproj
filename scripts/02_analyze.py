@@ -23,9 +23,12 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--out", default="data/out")
 ap.add_argument("--config", default=os.path.join(os.path.dirname(__file__), "..", "config"))
 ap.add_argument("--no-packs", action="store_true")
+ap.add_argument("--packs-only", action="store_true")
 a = ap.parse_args()
 
 df = near_dedupe(pd.read_parquet(os.path.join(a.out, "messages_all.parquet")))
+# he died 2019-08-10; later-dated 'his' messages are misparsed dates or misattributions
+df = df[~(df.is_epstein & (df.ts > "2019-08-10"))]
 je = df[df.is_epstein].copy()
 others = df[~df.is_epstein]
 print(f"his messages: {len(je):,}  others: {len(others):,}")
@@ -33,6 +36,11 @@ print(f"his messages: {len(je):,}  others: {len(others):,}")
 themes = behavior.load_themes(os.path.join(a.config, "themes.yaml"))
 tags = behavior.tag_themes(je, themes)
 behavior.theme_profile(je, tags).to_csv(os.path.join(a.out, "themes.csv"))
+
+if a.packs_only:
+    rep = packs.build_all(je, df, tags, themes, os.path.join(a.out, "packs"), os.path.join(a.config, "public_figures.txt"))
+    print("packs:", rep)
+    sys.exit()
 
 stylometry.grouped_profile(je, "year").to_csv(os.path.join(a.out, "stylometry_by_year.csv"))
 stylometry.contrast(je, others).to_csv(os.path.join(a.out, "stylometry_contrast.csv"))
