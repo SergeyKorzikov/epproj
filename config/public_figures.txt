@@ -1,0 +1,89 @@
+# Names kept un-masked in evidence packs: public figures and people whose role in the case
+# is itself public record (named in court filings / major reporting in a professional capacity).
+# Everyone else (staff, private individuals, anyone who could be a victim) is pseudonymised.
+# One name per line; surnames >3 letters also match on their own.
+jeffrey epstein
+ghislaine maxwell
+# politics / state
+donald trump
+bill clinton
+hillary clinton
+barack obama
+ehud barak
+bill richardson
+george mitchell
+peter mandelson
+steve bannon
+vladimir putin
+benjamin netanyahu
+mohammed bin salman
+prince andrew
+sarah ferguson
+miroslav lajcak
+# finance / business
+les wexner
+leon black
+jes staley
+bill gates
+reid hoffman
+peter thiel
+elon musk
+sergey brin
+mort zuckerman
+glenn dubin
+tom pritzker
+nicholas ribis
+jonathan farkas
+richard branson
+ariane de rothschild
+# science / academia / tech
+lawrence summers
+larry summers
+lawrence krauss
+noam chomsky
+marvin minsky
+martin nowak
+george church
+steven pinker
+murray gell-mann
+stephen hawking
+robert trivers
+joi ito
+nicholas negroponte
+john brockman
+shing-tung yau
+boris nikolic
+lisa new
+frank wilczek
+george whitesides
+david gelernter
+robert kuhn
+deepak chopra
+seth lloyd
+gerald edelman
+kip thorne
+# law
+alan dershowitz
+kathy ruemmler
+kathryn ruemmler
+reid weingarten
+martin weinberg
+ken starr
+kenneth starr
+jay lefkowitz
+alex acosta
+alexander acosta
+darren indyke
+richard kahn
+# media / culture
+michael wolff
+landon thomas
+peggy siegal
+woody allen
+paul krassner
+kevin spacey
+chris tucker
+jean-luc brunel
+# staff whose names are public via testimony (professional capacity only)
+larry visoski
+lesley groff

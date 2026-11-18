@@ -1,0 +1,8 @@
+pandas>=2.0
+pyarrow
+duckdb
+python-dateutil
+networkx
+pyyaml
+numpy
+spacy>=3.7

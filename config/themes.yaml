@@ -1,0 +1,153 @@
+# Thematic lexicons (regex, case-insensitive, matched on word boundaries).
+# Each theme = one "lens" of the final report. Edit freely; add patterns as you discover them.
+# Keep patterns specific — generic words inflate noise.
+
+longevity_biohacking:
+  label: "Долголетие, биохакинг, тело"
+  patterns:
+    - lithium
+    - gsk-?3
+    - longevity
+    - (anti-?)?aging|ageing
+    - telomer\w*
+    - rapamycin|metformin|resveratrol|nad\+?|nmn
+    - supplements?|vitamins?
+    - hormones?|testosterone|hgh|growth hormone
+    - stem cells?
+    - cryo\w*|freez\w* (my|his|the) (body|head|sperm)
+    - life extension|immortal\w*|live forever
+    - cholesterol|blood (test|work)|biopsy|mri|scan
+    - diet|fasting|calories|vegan|sugar
+    - sleep\w*|insomnia|melatonin
+    - exercis\w*|yoga|workout|trainer|swim\w*
+    - dentist|dermatolog\w*|botox
+    - genes?|genom\w*|dna|crispr|sperm|eugenic\w*
+
+science_patronage:
+  label: "Наука, учёные, интеллектуальный патронаж"
+  patterns:
+    - physic\w*|quantum|string theory|cosmolog\w*|black holes?
+    - mathemat\w*|equations?|theorem
+    - evolution\w*|darwin\w*|natural selection
+    - neuro\w*|brain|conscious\w*|cognit\w*
+    - artificial intelligence|\bai\b|machine learning|robot\w*|algorithm\w*
+    - biolog\w*|virus\w*|cancer
+    - harvard|mit\b|media lab|princeton|stanford|santa fe institute|edge\.org|\bedge\b
+    - nobel|professor|scientist\w*|research\w*|paper|lecture|conference|symposium
+    - theor(y|ies)|hypothes\w*|experiment\w*
+
+money_deals:
+  label: "Деньги, сделки, финансы"
+  patterns:
+    - money|cash|dollars?|\$\s?\d
+    - million|billion|\bmm\b
+    - invest\w*|fund\w*|hedge|portfolio|equity
+    - bank\w*|jpm|deutsche|loan\w*|wire\w*
+    - tax\w*|irs|trust\w*|estate planning|offshore
+    - fee\w*|pay(ment|ing)?|paid|invoice
+    - deal\w*|transaction\w*|structur\w*|negotiat\w*
+    - currenc\w*|bitcoin|crypto|gold|oil
+
+power_leverage:
+  label: "Власть, рычаги, контроль, обмен услугами"
+  patterns:
+    - favou?rs?
+    - leverage|power(ful)?|influence
+    - (he|she|they) owes?|owe (me|you)|in debt
+    - loyal\w*|trust (me|him|her)|betray\w*
+    - secret\w*|discreet\w*|off the record|between us
+    - enem(y|ies)|threat\w*|revenge|destroy
+    - control\w*|manag(e|ing) (him|her|them)
+    - (introduc\w*|connect) (you|him|her)|you should meet|i will introduce
+
+self_beliefs:
+  label: "Установки о себе и мире"
+  patterns:
+    - i (can|could) (do|fix|solve|get|make) (anything|everything|it)
+    - i (always|never)
+    - nobody|no one (can|will|knows)
+    - everyone (knows|wants|is)
+    - i don'?t care
+    - (smart|smartest|brilliant|genius|clever)
+    - (stupid|idiot\w*|moron\w*|dumb|fool\w*)
+    - rules?|laws? (of|are)
+    - the (truth|problem|answer|trick|secret) is
+    - (humans?|people|men|women) are
+    - (fate|luck|destiny|karma)
+    - (winner|loser|win|lose|game)
+
+politics_geopolitics:
+  label: "Политика и геополитика"
+  patterns:
+    - trump|clinton|obama|putin|netanyahu|barak|mbs|xi\b
+    - president\w*|election\w*|campaign|vote\w*|democrat\w*|republican\w*
+    - russia\w*|china|chinese|israel\w*|saudi\w*|iran\w*|qatar|ukrain\w*
+    - brexit|europe\w*|geopolit\w*|war\b|sanction\w*
+
+media_reputation:
+  label: "СМИ, репутация, управление образом"
+  patterns:
+    - press|journalist\w*|reporter\w*|media
+    - nyt|new york times|wsj|wall street journal|vanity fair|daily mail|miami herald
+    - articles?|story|stories|headline\w*|interview\w*
+    - reputation|image|pr\b|publicist|spin|narrative
+    - google (results|search)|wikipedia|search results
+    - book\b|biograph\w*|documentar\w*
+
+legal_conflict:
+  label: "Право, конфликты, защита"
+  patterns:
+    - lawyer\w*|attorney\w*|counsel
+    - court|judge\w*|jury|trial|deposition|depo\b
+    - plea|prosecut\w*|indict\w*|case\b|lawsuit\w*|sue\b|suing
+    - settle\w*|nda|confidentiality agreement
+    - fbi|doj|police|investigat\w*|subpoena\w*
+    - victims?|accus\w*|alleg\w*
+
+lifestyle_logistics:
+  label: "Образ жизни, логистика, места, распорядок"
+  patterns:
+    - plane|jet|flight\w*|fly(ing)?|pilot|airport|teterboro
+    - island|little st\.? jame\w*|lsj|ranch|zorro|new mexico|palm beach|paris|london|new york|nyc|st\.? thomas
+    - house|apartment|boat|helicopter|car\b|driver
+    - dinner|lunch|breakfast|chef|cook\w*|restaurant|menu
+    - schedule\w*|calendar|meeting\w*|tomorrow|tonight|next week
+    - staff|assistant\w*|house ?manager|butler
+
+philanthropy_status:
+  label: "Филантропия, дарение, статус"
+  patterns:
+    - donat\w*|gift\w*|grant\w*|foundation\w*|charit\w*|philanthrop\w*
+    - endow\w*|sponsor\w*|patron\w*
+    - (art|painting|sculpture|collector|auction)\w*
+    - (honou?r|award|prize|board|trustee)s?
+
+meaning_mortality:
+  label: "Смысл, смерть, религия, мораль"
+  patterns:
+    - god|religio\w*|spiritual\w*|soul|faith|bible|torah|jewish|church
+    - death|dying|die\b|mortal\w*|funeral|afterlife
+    - meaning of|purpose|moral\w*|ethic\w*|evil|good and bad|sin\b
+    - happiness|happy|suffer\w*|pain\b
+
+humor_play:
+  label: "Юмор, провокация, игра"
+  patterns:
+    - \blol\b|\bha(ha)+\b|\bhehe\b|:\)|;\)
+    - joke\w*|funny|kidding|tease|teasing|prank
+    - bet\b|wager|puzzle\w*|riddle\w*
+
+# Documents/messages that touch the abuse itself. NOT exported verbatim into evidence packs;
+# counted and summarised only at the level of behavioural pattern (control, recruitment logic, secrecy).
+sensitive_abuse:
+  label: "Чувствительное (только агрегированно)"
+  exclude_from_packs: true
+  patterns:
+    - massag\w*
+    - (young|younger|little|teen\w*|school) (girl|girls|ones)
+    - under ?age|minor\w*|underage|\b1[3-7] ?(yo|years? old)\b
+    - recruit\w*
+    - sex\w*|nude\w*|naked|topless
+    - victims?
+    - (models?|modell?ing) (agency|agent|girls?|booking)|\bbookers?\b|mc2|model agency
+    - (her|she) (come|comes) (see|visit|over)
