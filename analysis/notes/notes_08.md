@@ -69,3 +69,6 @@
 3. Он сам — консультант по PR для других (Синофски, Краусс), режиссёр интриги (трейлер: «the story behind the story... NOT as predicted») и невербалики.
 4. Отношение к собственному образу — ироничная дистанция: «symbol for all ills... im your boy», «monster», «outsized image for someone that rarely leaves his house»; при этом проверка лояльности связей после каждой волны («did my bad press cause you concern?»).
 5. Истина = авторизованная версия («How can they call it a true story if nobody authorized it»).
+
+## Поправка (сессия 2026-11-18, сверка)
+- EFTA02633960 (2019-02-24): фраза «i dont think i can win the pr battle and must concentrate on any possible legal consequence» стоит в начале сегмента, его идиолектом (строчная i, dont), как ответ на реплику Шёна «I am a worst case scenario person». Атрибуция ему (как в документе) сохраняется; пометка выше «это мнение адвоката» неверна.
