@@ -34,6 +34,28 @@ def ownness(text: str) -> float:
     return 100 * sum(len(r.findall(text)) for r in _OWN) / w
 
 
+_SALUTE = re.compile(r"^\s*(dear\s+\w+|hi\s+jeff\w*|hello\s+jeff\w*|jeff(rey|ery)?\s*[,;:\-—]?|thank you,? jeff\w*)\s*[,;:!\-—]?\s*$", re.I)
+_LINE_OWN = re.compile(r"(?<![A-Za-z'])i(?![A-Za-z'])|\b(dont|im|cant|wont|didnt|isnt|ive|youre|thats)\b|\s\.\s|\.\.|^[a-z]")
+
+
+def own_prefix(text: str) -> str:
+    """Keep the leading part that is his. Stop at a salutation to him, or at a run of 4+ long,
+    well-formed lines without any of his idiolect markers (typical of a quoted message pasted below)."""
+    lines = text.splitlines()
+    out, run = [], 0
+    for ln in lines:
+        s = ln.strip()
+        if out and _SALUTE.match(s):
+            break
+        foreign_like = len(s) >= 55 and not _LINE_OWN.search(s) and s[:1].isupper()
+        run = run + 1 if foreign_like else 0
+        out.append(ln)
+        if run >= 4:
+            out = out[:-4]
+            break
+    return "\n".join(out).strip()
+
+
 def looks_foreign(text: str) -> bool:
     lines = [ln for ln in text.splitlines() if ln.strip()]
     columns = len(lines) > 25 and sum(len(ln) for ln in lines) / len(lines) < 45  # OCR of newspaper columns
@@ -92,6 +114,12 @@ def build_all(je, df_all, tags, themes, outdir, allowlist):
     masker.roles = build_roles(je, tags, norm)
     print(f"roles inferred for {len(masker.roles)} contacts")
     sensitive = tags.get("th_sensitive_abuse", pd.Series(0, index=tags.index)).gt(0)
+    je = je.copy()
+    doj = je.source.str.startswith("DOJ")
+    je.loc[doj, "body"] = je.loc[doj, "body"].apply(own_prefix)
+    je = je[je.body.str.len() > 0]
+    tags = tags.loc[je.index]
+    sensitive = sensitive.loc[je.index]
     words = je.body.str.split().str.len()
     own = je.body.apply(ownness)
     foreign = je.body.apply(looks_foreign)
